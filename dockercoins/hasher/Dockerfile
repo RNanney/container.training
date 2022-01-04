@@ -1,5 +1,5 @@
-FROM ruby:alpine
-RUN apk add --update build-base curl
+FROM ruby:slim
+RUN apt-get update && apt-get install -y build-essential curl
 RUN gem install sinatra
 RUN gem install thin
 ADD hasher.rb /
